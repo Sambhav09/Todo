@@ -1,0 +1,201 @@
+/* Home.css - Premium Design System for Home/Todo Page */
+
+:root {
+    --home-primary: #6366f1;
+    --home-bg: #f8fafc;
+    --home-card-bg: #ffffff;
+    --home-text-main: #1e293b;
+    --home-text-muted: #64748b;
+    --home-border: #e2e8f0;
+    --home-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --home-nav-bg: rgba(255, 255, 255, 0.8);
+}
+
+.home-container {
+    min-height: 100vh;
+    background-color: var(--home-bg);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--home-text-main);
+}
+
+/* Navigation Bar */
+.home-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    background: var(--home-nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--home-border);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.home-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-logout-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+    background-color: #ef4444;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.home-logout-btn:hover {
+    background-color: #dc2626;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.4);
+}
+
+/* Main Content */
+.home-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.home-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--home-text-main);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.025em;
+}
+
+.home-header p {
+    color: var(--home-text-muted);
+}
+
+/* Todo Form */
+.todo-form {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: var(--home-shadow);
+}
+
+.todo-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--home-border);
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.todo-input:focus {
+    border-color: var(--home-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.todo-add-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--home-primary);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.todo-add-btn:hover {
+    background-color: #4f46e5;
+    transform: translateY(-1px);
+}
+
+/* Todo List */
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.todo-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid var(--home-border);
+    transition: all 0.2s ease;
+    animation: slide-in 0.4s ease-out;
+}
+
+@keyframes slide-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.todo-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.todo-text {
+    font-size: 1.05rem;
+    color: var(--home-text-main);
+}
+
+.todo-delete-btn {
+    padding: 0.5rem;
+    color: #94a3b8;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.todo-delete-btn:hover {
+    color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--home-text-muted);
+}
+
+/* Responsive adjustment */
+@media (max-width: 640px) {
+    .home-nav {
+        padding: 0.75rem 1rem;
+    }
+    
+    .todo-form {
+        flex-direction: column;
+    }
+    
+    .todo-add-btn {
+        width: 100%;
+    }
+}
