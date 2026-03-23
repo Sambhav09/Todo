@@ -19,6 +19,8 @@ Express.js
 Database
 PostgreSQL
 📂 Project Structure
+
+
 client/
 │── src/
 │   ├── assets/
@@ -42,6 +44,8 @@ server/
 │── database.sql
 │── .env
 │── package.json
+
+
 ⚙️ Installation & Setup
 1️⃣ Clone the repository
 git clone https://github.com/your-username/todo-app.git
